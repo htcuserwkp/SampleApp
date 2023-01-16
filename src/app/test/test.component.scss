@@ -1,0 +1,91 @@
+
+h2 {
+  text-align: center;
+  font-size: 2em;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  margin-bottom: 1em;
+  text-shadow: 2px 2px #ccc;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+// label {
+//   font-size: 1.2em;
+//   font-family: 'Montserrat', sans-serif;
+//   font-weight: 400;
+//   margin-bottom: 0.5em;
+// }
+
+label {
+    font-size: 1.2em;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    margin-bottom: 0.5em;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    
+    &:hover {
+      background-color: #f5f5f5;
+    }
+  
+    input[type="checkbox"] {
+      margin-right: 0.5rem;
+      appearance: none;
+      width: 1.5rem;
+      height: 1.5rem;
+      border-radius: 3px;
+      border: 1px solid #ccc;
+      transition: background-color 0.2s ease-in-out;
+      
+      &:checked {
+        background-color: #113052;
+        border-color: #a5bcd4;
+      }
+    }
+  }
+  
+
+input[type="checkbox"] {
+  margin-right: 0.5em;
+}
+
+ul {
+  list-style: none;
+  margin-bottom: 1em;
+  li {
+    font-size: 1.2em;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    margin-bottom: 0.5em;
+    padding: 1em;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    box-shadow: 2px 2px #ccc;
+    &:hover {
+      background-color: #e0e0e0;
+      box-shadow: none;
+    }
+  }
+}
+
+.btn {
+  font-size: 1.2em;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  &.btn-outline-secondary {
+    border-color: gray;
+    color: gray;
+    &:hover {
+      background-color: gray;
+      color: white;
+    }
+  }
+}

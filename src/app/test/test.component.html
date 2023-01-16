@@ -1,0 +1,24 @@
+<H2>Weather Page</H2>
+<ng-container *ngIf="weatherData">
+    <div class="container">
+        <label>
+            <input type="checkbox" [(ngModel)]="isFahrenheit"> Use Fahrenheit
+        </label>
+        <ul>
+            <ng-container *ngIf="!isFahrenheit">
+                <li *ngFor="let item of weatherData">
+                    {{item.date}} - ({{item.temperatureC}}°C) - {{item.summary}}
+                </li>
+            </ng-container>
+            <ng-container *ngIf="isFahrenheit">
+                <li *ngFor="let item of weatherData">
+                    {{item.date}} - ({{item.temperatureF}}°F) - {{item.summary}}
+                </li>
+            </ng-container>
+        </ul>
+
+        <button (click)="refresh()" class="btn btn-outline-secondary">
+            Refresh
+        </button>
+    </div>
+</ng-container>
