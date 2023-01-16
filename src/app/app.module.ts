@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TestComponent } from './test/test.component';
 import { HomeComponent } from './home/home.component';
+import { MathComponent } from './Math/try-math.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { FooterComponent } from './footer/footer.component';
 
@@ -16,7 +17,8 @@ import { FooterComponent } from './footer/footer.component';
     TestComponent,
     HomeComponent,
     NavBarComponent,
-    FooterComponent
+    FooterComponent,
+    MathComponent
   ],
   imports: [
     BrowserModule,

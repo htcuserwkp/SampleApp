@@ -5,7 +5,7 @@ $primary-color: #365c7a; // define a primary color variable
     font-family: 'Montserrat', sans-serif;
     align-items: center;
     justify-content: center;
-    height: 60vh;
+    
 }
 
 .welcome-message {
@@ -13,11 +13,13 @@ $primary-color: #365c7a; // define a primary color variable
     color: $primary-color;
     text-align: center;
     font-weight: bold;
+    height: 30vh;
 }
 
 .row {
     display: flex;
     font-family: 'Montserrat', sans-serif;
+    height: 25vh;
 }
 
 .col-12 {
