@@ -1,0 +1,51 @@
+<ng-container *ngIf="items.length > 0" >
+    <div class="table-responsive">
+        <table class="table table-borderless">
+            <thead [class.thead-light]="true" class="border-0 py-2">
+                <tr>
+                    <th scope="col" >
+                        <div class="p-2 px-3 text-uppercase">Item</div>
+                    </th>
+                    <th scope="col">
+                        <div class="py-2 text-uppercase">Price</div>
+                    </th>
+                    <th scope="col">
+                        <div class="py-2 text-uppercase">Quantity</div>
+                    </th>
+                    <th scope="col">
+                        <div class="py-2 text-uppercase">Total</div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of items">
+                    <th scope="row">
+                        <div class="p-2">
+                            <div class="ms-3 d-inline-block align-middle">
+                                <h5 class="mb-0">
+                                    <a routerLink="/products/{{item.foodId}}"
+                                        class="text align-middle text-decoration-none">{{item.foodName}}</a>
+                                </h5>
+                                <!-- <span class="text-muted font-weight-normal font-italic d-block">
+                                    Pre-prepared
+                                </span> -->
+                            </div>
+                        </div>
+                    </th>
+                    <td class="align-middle"><strong>{{item.price | currency}}</strong></td>
+                    <td class="align-middle">
+                        <div class="d-flex align-items-center" [class.justify-content-center]="true">
+                            <strong class="font-weight-bold" style="font-size: 1.1em;">
+                                {{item.quantity}}
+                            </strong>
+                        </div>
+                    </td>
+                    <td class="align-middle">
+                        <strong>{{item.price * item.quantity | currency}}</strong>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+</ng-container>

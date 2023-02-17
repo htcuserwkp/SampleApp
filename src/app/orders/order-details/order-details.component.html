@@ -1,0 +1,13 @@
+<div class="container mt-5 py-4">
+    <h2>Order# {{order.orderNumber}}</h2>
+      <div class="row" *ngIf="order">
+        <div class="col-8">
+          <app-order-item
+            [items]="order.orderItems">
+          </app-order-item>
+        </div>
+        <div class="col-4">
+        </div>
+      </div>
+      
+    </div>
