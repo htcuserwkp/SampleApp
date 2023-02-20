@@ -1,6 +1,6 @@
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +15,8 @@ import { CustomerDetailsComponent } from './customers/customer-details/customer-
 import { CustomerListComponent } from './customers/customer-list/customer-list.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { LoadingInterceptor } from './common/interceptors/loading.interceptor';
+import { CustomerComponent } from './customers/customer/customer.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -26,13 +28,16 @@ import { LoadingInterceptor } from './common/interceptors/loading.interceptor';
     MathComponent,
     FoodComponent,
     CustomerDetailsComponent,
-    CustomerListComponent
+    CustomerListComponent,
+    CustomerComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     OrderModule,
     NgxSpinnerModule
   ],

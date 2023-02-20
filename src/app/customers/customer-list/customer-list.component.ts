@@ -25,4 +25,14 @@ export class CustomerListComponent {
       error: (err: any) => {console.log(err)}
     });
   }
+
+  deleteCustomer(id: number) {
+    this.customerService.deleteCustomer(id).subscribe({
+      next: (response) => {
+       this.ngOnInit(); 
+        this.getCustomers();
+      },
+      error: (err: any) => {console.log(err)}
+    });
+  }
 }

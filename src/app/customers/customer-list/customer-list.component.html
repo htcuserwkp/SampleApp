@@ -3,7 +3,7 @@
         <div class="col-12">
             <h2>Customers</h2>
             <div class="text-right mb-4">
-                <button class="btn btn-primary customers__new-customer">
+                <button class="btn btn-primary customers__new-customer" routerLink="/customers/new">
                     <i class="fas fa-plus"></i> Add Customer
                 </button>
             </div>
@@ -27,7 +27,7 @@
                             <button class="btn btn-secondary customers__table-button">
                                 <i class="fas fa-pencil-alt"></i>
                             </button>
-                            <button class="btn btn-danger customers__table-button">
+                            <button class="btn btn-danger customers__table-button" (click)="deleteCustomer(customer.id)">
                                 <i class="fas fa-trash-alt"></i>
                             </button>
                         </td>

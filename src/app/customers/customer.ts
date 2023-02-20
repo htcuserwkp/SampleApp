@@ -13,3 +13,9 @@ export interface Customer {
     email: string
     phone: string
   }
+
+  export class NewCustomer {
+    name!: string;
+    email!: string;
+    phone!: string;
+  }
