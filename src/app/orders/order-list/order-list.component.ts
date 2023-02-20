@@ -9,6 +9,7 @@ import { OrderService } from '../order.service';
 })
 export class OrderListComponent {
   orders: Order[] = [];
+  status!: string;
   
   constructor(private orderService: OrderService) { }
 
@@ -23,5 +24,35 @@ export class OrderListComponent {
       },
       error: (err: any) => {console.log(err)}
     });
+  }
+
+  deleteOrder(id:number){
+
+  }
+
+  getProgressValue(status: string): number {
+    switch (status) {
+      case 'pending':
+        return 33;
+      case 'paid':
+        return 66;
+      case 'completed':
+        return 100;
+      default:
+        return 0;
+    }
+  }
+
+  getProgressColor(status: string): string {
+    switch (status) {
+      case 'pending':
+        return 'orange';
+      case 'paid':
+        return 'blue';
+      case 'completed':
+        return 'green';
+      default:
+        return 'gray';
+    }
   }
 }

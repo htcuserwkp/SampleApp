@@ -7,6 +7,11 @@
           </app-order-item>
         </div>
         <div class="col-4">
+          <app-summary
+          [serviceCharge]="order.serviceCharge"
+          [discount]="order.discount"
+          [subtotal]="order.subTotal">
+        </app-summary>
         </div>
       </div>
       

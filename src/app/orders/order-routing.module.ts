@@ -5,8 +5,18 @@ import { OrderListComponent } from './order-list/order-list.component';
 import { OrderDetailsComponent } from './order-details/order-details.component';
 
 const routes: Routes = [
-  {path: '', component: OrderListComponent},
-  {path: ':id', component: OrderDetailsComponent, data: {breadcrumb: {alias: 'OrderDetails'}}}
+  {
+    path: '', 
+    component: OrderListComponent, 
+    title: 'Orders'
+  },
+
+  {
+    path: ':id', 
+    component: OrderDetailsComponent, 
+    title: 'Order',
+    data: {breadcrumb: {alias: 'OrderDetails'}}
+  }
 ]
 
 @NgModule({

@@ -1,0 +1,188 @@
+.orders__table-header {
+    background-color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.orders__table-data:last-child {
+    text-align: right;
+}
+
+.orders__table-button {
+    border-radius: 50%;
+    padding: 6px;
+    margin-right: 8px;
+}
+
+.orders__new-order {
+    border-radius: 30px;
+    padding: 6px 16px;
+    float: right;
+}
+
+.orders__no-orders {
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 80px;
+}
+
+@media only screen and (min-width: 576px) {
+    .orders__new-order {
+        margin-left: auto;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .orders__table {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .orders__table {
+        font-size: 18px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .orders__table {
+        font-size: 20px;
+    }
+}
+
+.orders__table-button i {
+    margin-right: 0;
+    width: 23px;
+}
+
+.orders__table-button i.fa-pencil-alt {
+    color: #fff;
+}
+
+.orders__table-button i.fa-trash-alt {
+    color: #fff;
+}
+
+ngx-progress {
+    height: 10px;
+    border-radius: 5px;
+    background-color: #e9ecef;
+  }
+  
+  ngx-progress progress-bar {
+    border-radius: 5px;
+  }
+
+// .orders {
+//     padding-top: 80px;
+//     background-color: #f5f5f5;
+//     min-height: 100vh;
+// }
+
+// .orders__title {
+//     font-size: 36px;
+//     font-weight: 700;
+//     margin-bottom: 20px;
+// }
+
+// .orders__button {
+//     font-size: 16px;
+//     font-weight: 700;
+//     border-radius: 30px;
+//     padding: 12px 30px;
+// }
+
+// .orders__table {
+//     border-collapse: separate;
+//     border-spacing: 0;
+//     width: 100%;
+//     max-width: 100%;
+// }
+
+// .orders__table-header {
+//     font-size: 16px;
+//     font-weight: 700;
+//     text-align: left;
+// }
+
+// .orders__table-data {
+//     font-size: 14px;
+//     font-weight: 400;
+//     color: #333;
+//     vertical-align: middle;
+//     padding: 10px 16px;
+//     border-top: 1px solid #ddd;
+// }
+
+// .orders__table-data:first-child {
+//     border-top: none;
+// }
+
+// .orders__table-button {
+//     font-size: 14px;
+//     font-weight: 700;
+//     border-radius: 30px;
+//     padding: 6px 16px;
+//     margin-right: 8px;
+//     }
+    
+//     .orders__no-orders {
+//     font-size: 24px;
+//     font-weight: 700;
+//     text-align: center;
+//     margin-top: 80px;
+//     }
+    
+//     @media only screen and (min-width: 576px) {
+//     .orders__button {
+//     margin-left: auto;
+//     }}
+
+//     @media only screen and (min-width: 768px) {
+//     .orders__table {
+//     font-size: 16px;
+//     }
+//     }
+    
+//     @media only screen and (min-width: 992px) {
+//     .orders__table {
+//     font-size: 18px;
+//     }
+//     }
+    
+//     @media only screen and (min-width: 1200px) {
+//     .orders__table {
+//     font-size: 20px;
+//     }
+//     }
+    
+//     // Advanced SCSS
+//     .orders__table {
+//     th.orders__table-header {
+//     background-color: #fff;
+//     position: sticky;
+//     top: 0;
+//     z-index: 1;
+//     }
+
+//     td.orders__table-data {
+//         &:last-child {
+//             text-align: right;
+//         }
+//     }
+    
+//     tr {
+//         &:hover {
+//             background-color: rgba(0, 0, 0, 0.05);
+//         }
+//     }
+    
+// }
+
+// .orders__table-button {
+// i {
+// margin-right: 6px;
+// }
+// }

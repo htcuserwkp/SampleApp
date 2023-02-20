@@ -1,0 +1,24 @@
+<div class="summary-header">
+    Summary
+  </div>
+  <div class="summary-list">
+    <ul class="list-unstyled mb-4">
+      <li class="summary-item">
+        <span class="item-label">Subtotal</span>
+        <span class="item-value">{{subtotal | currency}}</span>
+      </li>
+      <li class="summary-item">
+        <span class="item-label">Service charge</span>
+        <span class="item-charge">{{serviceCharge | currency}}</span>
+      </li>
+      <li class="summary-item">
+        <span class="item-label">Discount</span>
+        <span class="item-discount">- {{discount | currency}}</span>
+      </li>
+      <li class="summary-item">
+        <span class="item-label">TOTAL</span>
+        <span class="item-value">{{(subtotal - discount + serviceCharge) | currency}}</span>
+      </li>
+    </ul>
+  </div>
+  

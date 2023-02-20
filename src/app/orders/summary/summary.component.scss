@@ -1,0 +1,35 @@
+.summary-header {
+    background-color: #f8f9fa;
+    padding: 1.2em;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  
+  .summary-list {
+    padding: 1.2em;
+  }
+  
+  .summary-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.2em;
+    border-bottom: 1px solid #dee2e6;
+  
+    .item-label {
+      color: #6c757d;
+      font-weight: bold;
+    }
+  
+    .item-value {
+      font-weight: bold;
+    }
+  
+    .item-discount {
+      color: green;
+    }
+
+    .item-charge {
+        color: rgb(133, 14, 14);
+      }
+  }
+  

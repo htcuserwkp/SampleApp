@@ -1,4 +1,4 @@
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -11,6 +11,10 @@ import { NavBarComponent } from './shared/nav-bar/nav-bar.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { FoodComponent } from './food/food-details/food.component';
 import { OrderModule } from './orders/order.module';
+import { CustomerDetailsComponent } from './customers/customer-details/customer-details.component';
+import { CustomerListComponent } from './customers/customer-list/customer-list.component';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { LoadingInterceptor } from './common/interceptors/loading.interceptor';
 
 @NgModule({
   declarations: [
@@ -20,16 +24,21 @@ import { OrderModule } from './orders/order.module';
     NavBarComponent,
     FooterComponent,
     MathComponent,
-    FoodComponent
+    FoodComponent,
+    CustomerDetailsComponent,
+    CustomerListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    OrderModule
+    OrderModule,
+    NgxSpinnerModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
