@@ -5,10 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TestComponent } from './test/test.component';
-import { HomeComponent } from './shared/home/home.component';
 import { MathComponent } from './test/Math/try-math.component';
-import { NavBarComponent } from './shared/nav-bar/nav-bar.component';
-import { FooterComponent } from './shared/footer/footer.component';
 import { FoodComponent } from './food/food-details/food.component';
 import { OrderModule } from './orders/order.module';
 import { CustomerDetailsComponent } from './customers/customer-details/customer-details.component';
@@ -17,14 +14,12 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 import { LoadingInterceptor } from './common/interceptors/loading.interceptor';
 import { CustomerComponent } from './customers/customer/customer.component';
 import { CommonModule } from '@angular/common';
+import { BaseModule } from './common/modules/base.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     TestComponent,
-    HomeComponent,
-    NavBarComponent,
-    FooterComponent,
     MathComponent,
     FoodComponent,
     CustomerDetailsComponent,
@@ -35,6 +30,7 @@ import { CommonModule } from '@angular/common';
     CommonModule,
     BrowserModule,
     AppRoutingModule,
+    BaseModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
