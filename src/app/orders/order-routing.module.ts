@@ -14,7 +14,7 @@ const routes: Routes = [
   {
     path: ':id', 
     component: OrderDetailsComponent, 
-    title: 'Order',
+    title: 'Order Details',
     data: {breadcrumb: {alias: 'OrderDetails'}}
   }
 ]

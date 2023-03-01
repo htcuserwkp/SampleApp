@@ -12,19 +12,19 @@ export class CustomerService {
   
   constructor(private http: HttpClient) { }
 
-  getCustomers() :Observable<Customer[]>{
-    return this.http.get<Customer[]>(this.apiUrl + 'Customer');
+  getCustomers() :Observable<CustomersResponse>{
+    return this.http.get<CustomersResponse>(this.apiUrl + 'customer/all');
   }
 
   addCustomer(customerInfo: NewCustomer): Observable<CustomersResponse> {
-    return this.http.post<CustomersResponse>(this.apiUrl+'Customer/', customerInfo);
+    return this.http.post<CustomersResponse>(this.apiUrl+'customer/add', customerInfo);
   }
 
   updateCustomer(customerInfo: Customer): Observable<CustomersResponse> {
-    return this.http.post<CustomersResponse>(this.apiUrl+'Customer/'+customerInfo.id, customerInfo);
+    return this.http.post<CustomersResponse>(this.apiUrl+'customer/update', customerInfo);
   }
 
   deleteCustomer(id: number): Observable<CustomersResponse> {
-    return this.http.delete<CustomersResponse>(this.apiUrl + 'Customer/' + id);
+    return this.http.delete<CustomersResponse>(this.apiUrl + 'customer/' + id);
   }
 }

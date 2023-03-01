@@ -12,10 +12,10 @@ export class OrderService {
   constructor(private http: HttpClient) { }
 
   getCustomerOrders() {
-    return this.http.get<OrdersResponse>(this.apiUrl + 'order/get-orders');
+    return this.http.get<OrdersResponse>(this.apiUrl + 'order/all');
   }
 
   getOrderById(id: number) {
-    return this.http.get<OrderByIdResponse>(this.apiUrl + 'order/get-order/' + id);
+    return this.http.get<OrderByIdResponse>(this.apiUrl + 'order/' + id);
   }
 } 

@@ -19,8 +19,7 @@ export class CustomerListComponent {
   getCustomers() {
     this.customerService.getCustomers().subscribe({
       next: (response) => {
-        //this.customers = response.data;
-        this.customers = response;
+        this.customers = response.data;
       },
       error: (err: any) => {console.log(err)}
     });
