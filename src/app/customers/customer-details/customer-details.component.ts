@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { Customer } from '../customer';
 import { CustomerService } from '../customer.service';
 
 @Component({
@@ -9,21 +10,12 @@ import { CustomerService } from '../customer.service';
   styleUrls: ['./customer-details.component.scss']
 })
 export class CustomerDetailsComponent implements OnInit {
-  customer = {
-    name: '',
-    email: '',
-    phone: ''
-  };
+  customer = new Customer();
 
-  constructor(private customerService: CustomerService, private router: Router) { }
+  constructor(
+    private customerService: CustomerService, 
+    private toastr: ToastrService) { }
 
   ngOnInit(): void {
-  }
-
-  addCustomer() {
-    this.customerService.addCustomer(this.customer).subscribe(() => {
-      //this.toastr.success("Customer Added Successfully")
-      this.router.navigate(['/customers']);
-    });
   }
 }

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { Customer } from '../customer';
 import { CustomerService } from '../customer.service';
 
@@ -10,7 +11,9 @@ import { CustomerService } from '../customer.service';
 export class CustomerListComponent {
   customers: Customer[] = [];
   
-  constructor(private customerService: CustomerService) { }
+  constructor(
+    private customerService: CustomerService, 
+    private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.getCustomers()
@@ -28,7 +31,8 @@ export class CustomerListComponent {
   deleteCustomer(id: number) {
     this.customerService.deleteCustomer(id).subscribe({
       next: (response) => {
-       this.ngOnInit(); 
+        this.toastr.success(response.message);
+        this.ngOnInit(); 
         this.getCustomers();
       },
       error: (err: any) => {console.log(err)}
