@@ -16,6 +16,10 @@ const routes: Routes = [
   {
     path: 'customers', loadChildren: () => import('./customers/customer.module').then(mod => mod.CustomerModule),
     data: { breadcrumb: {skip: true} }
+  },
+  {
+    path: 'foods', loadChildren: () => import('./food/food.module').then(mod => mod.FoodModule),
+    data: { breadcrumb: {skip: true} }
   }
 ];
 
