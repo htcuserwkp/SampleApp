@@ -1,1 +1,20 @@
-<a>WORKS</a>
+<div class="container mt-5">
+    <div class="row">
+      <div class="col-12">
+        <h2>{{customer.name}}</h2>
+        <div class="card">
+          <div class="card-body">
+            <p class="card-text"><strong>Email:</strong> {{customer.email}}</p>
+            <p class="card-text"><strong>Phone:</strong> {{customer.phone}}</p>
+            <button class="btn btn-secondary mr-15" routerLink="/customers/update/{{customer.id}}">
+              <i class="fas fa-pencil-alt"></i> Edit
+            </button>
+            <button class="btn btn-danger" (click)="deleteCustomer(customer.id!)">
+              <i class="fas fa-trash-alt"></i> Delete
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

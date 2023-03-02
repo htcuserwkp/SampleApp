@@ -7,6 +7,13 @@ export class CustomersResponse implements ResponseBody {
     data: Customer[] = [];
 }
 
+export class CustomerResponse implements ResponseBody {
+  status!: number;
+  warnings: string[] = [];
+  message!: string;
+  data!: Customer;
+}
+
 // export interface Customer {
 //     id: number
 //     name: string

@@ -24,18 +24,21 @@
                         <td class="customers__table-data">{{customer.email}}</td>
                         <td class="customers__table-data">{{customer.phone}}</td>                          
                         <td class="customers__table-data text-right">
-                            <button class="btn btn-secondary customers__table-button">
+                            <button class="btn btn-secondary customers__table-button"routerLink="/customers/update/{{customer.id}}">
                                 <i class="fas fa-pencil-alt"></i>
                             </button>
                             <button class="btn btn-danger customers__table-button" (click)="deleteCustomer(customer.id!)">
                                 <i class="fas fa-trash-alt"></i>
                             </button>
+                            <!-- <button class="btn btn-warning customers__table-button"> 
+                                <i class="fas fa-duotone fa-info"></i>
+                            </button> -->
                         </td>
                     </tr>
                 </tbody>
             </table>
             <div *ngIf="customers.length === 0" class="text-center customers__no-customers">
-                No customers found.
+                {{message}}
             </div>
         </div>
     </div>

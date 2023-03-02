@@ -10,6 +10,7 @@ import { OrderService } from '../order.service';
 export class OrderListComponent {
   orders: Order[] = [];
   status!: string;
+  message!:string;
   
   constructor(private orderService: OrderService) { }
 
@@ -22,7 +23,10 @@ export class OrderListComponent {
       next: (response: { data: Order[]; }) => {
         this.orders = response.data;
       },
-      error: (err: any) => {console.log(err)}
+      error: (err: any) => {
+        this.message = err.error.message;
+        console.log(err);
+      }
     });
   }
 

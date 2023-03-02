@@ -10,6 +10,7 @@ import { CustomerService } from '../customer.service';
 })
 export class CustomerListComponent {
   customers: Customer[] = [];
+  message!:string;
   
   constructor(
     private customerService: CustomerService, 
@@ -24,7 +25,10 @@ export class CustomerListComponent {
       next: (response) => {
         this.customers = response.data;
       },
-      error: (err: any) => {console.log(err)}
+      error: (err: any) => {
+        this.message = err.error.message;
+        console.log(err);
+      }
     });
   }
 
