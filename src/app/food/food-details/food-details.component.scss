@@ -1,0 +1,90 @@
+.food-details {
+    font-size: 1.2rem;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+  
+    &__name {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: #8bc34a; /* green */
+    }
+  
+    &__description {
+      margin-bottom: 1rem;
+      font-style: italic;
+      color: #757575;
+    }
+  
+    &__info {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-top: 1rem;
+    }
+  
+    &__quantity,
+    &__price,
+    &__category,
+    &__id {
+      flex-basis: calc(50% - 0.5rem);
+      margin-bottom: 0.5rem;
+    }
+  
+    &__quantity {
+      color: #ffc107; /* yellow */
+    }
+  
+    &__price {
+      color: #4caf50; /* darker green */
+    }
+  
+    &__category,
+    &__id {
+      color: #616161; /* gray */
+    }
+  
+    &:hover {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: box-shadow 0.2s ease-in-out;
+    }
+  
+    &--featured {
+      border: 2px solid #8bc34a;
+    }
+  
+    &__buttons {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 1rem;
+    }
+  
+    &__edit-button,
+    &__delete-button {
+      border: none;
+      border-radius: 3px;
+      padding: 0.5rem;
+      margin-left: 1rem;
+      color: #fff;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+  
+      &:hover {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: box-shadow 0.2s ease-in-out;
+      }
+    }
+  
+    &__edit-button {
+      background-color: #2196f3; /* blue */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+  
+    &__delete-button {
+      background-color: #f44336; /* red */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    }
+  

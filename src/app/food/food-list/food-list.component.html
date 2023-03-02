@@ -24,7 +24,7 @@
   </div>
   
   <div class="food-thumbnails">
-    <div class="food-thumbnail" *ngFor="let food of foods">
+    <div class="food-thumbnail" *ngFor="let food of foods" routerLink="/foods/{{food.id}}">
       <h2>{{ food.name }}</h2>
       <p>{{ food.description }}</p>
       <p>Quantity: {{ food.quantity }}</p>
