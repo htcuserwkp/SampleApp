@@ -27,34 +27,43 @@ $light-color: #F5F5F5; // light gray
   border-radius: 10px;
   background-color: white;
   @include box-shadow(0, 0, 10px, rgba(0, 0, 0, 0.1));
-}
 
-// Style the card body element
-.card-body {
-  padding: 20px;
+  &-body {
+    padding: 20px;
+  }
 }
 
 // Style the card text element
 .card-text {
   margin-bottom: 10px;
   color: $dark-color;
+
+  @media (max-width: 600px) {
+    font-size: 14px;
+    padding: 10px;
+  }
 }
 
-// Style the buttons
-.btn {
+// Create a generic button style
+%btn {
   border-radius: 20px;
   padding: 10px 20px;
   font-weight: bold;
   color: white;
+
+  &:hover {
+    filter: brightness(90%);
+  }
 }
 
-// Use the primary color for the secondary button
+// Style the buttons
 .btn-secondary {
+  @extend %btn;
   background-color: $primary-color;
 }
 
-// Use the secondary color for the danger button
 .btn-danger {
+  @extend %btn;
   background-color: $secondary-color;
 }
 

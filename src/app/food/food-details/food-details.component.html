@@ -1,15 +1,24 @@
-<div class="food-details">
-    <h2 class="food-details__name">{{ food.name }}</h2>
-    <p class="food-details__description">{{ food.description }}</p>
-    <div class="food-details__info">
-      <div class="food-details__quantity">Quantity: {{ food.quantity }}</div>
-      <div class="food-details__price">Price: {{ food.price | currency }}</div>
-      <div class="food-details__category">Category: {{ food.categoryId }}</div>
-      <div class="food-details__id">ID: {{ food.id }}</div>
-    </div>
-    <div class="food-details__buttons">
-      <button class="food-details__edit-button" routerLink="/food/update/{{food.id}}">Edit</button>
-      <button class="food-details__delete-button" (click)="deleteFood(food.id)">Delete</button>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-12">
+      <h2 class="food-details__name">{{ food.name }}</h2>
+      <div class="card">
+        <div class="card-body">
+          <p class="card-text food-details__description">{{ food.description }}</p>
+          <div class="food-details__info">
+            <div class="food-details__quantity"><strong>Quantity:</strong> {{ food.quantity }}</div>
+            <div class="food-details__price"><strong>Price:</strong> {{ food.price | currency }}</div>
+            <div class="food-details__category"><strong>Category:</strong> {{ food.categoryId }}</div>
+            <div class="food-details__id"><strong>ID:</strong> {{ food.id }}</div>
+          </div>
+            <button class="btn btn-secondary mr-15 food-details__edit-button" routerLink="/food/update/{{food.id}}">
+              <i class="fas fa-pencil-alt"></i> Edit
+            </button>
+            <button class="btn btn-danger food-details__delete-button" (click)="deleteFood(food.id)">
+              <i class="fas fa-trash-alt"></i> Delete
+            </button>
+        </div>
+      </div>
     </div>
   </div>
-  
+</div>

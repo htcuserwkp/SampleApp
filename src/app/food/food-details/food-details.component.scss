@@ -1,90 +1,115 @@
-.food-details {
-    font-size: 1.2rem;
-    padding: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #fff;
-  
-    &__name {
-      font-size: 1.5rem;
-      margin-bottom: 0.5rem;
-      color: #8bc34a; /* green */
+// Define some variables for the colors
+$primary-color: #9ACD32; // yellow-green
+$secondary-color: #F0E68C; // khaki
+$dark-color: #333333; // dark gray
+$light-color: #F5F5F5; // light gray
+
+// Use a mixin to add box-shadow effect
+@mixin box-shadow($x, $y, $blur, $color) {
+  -webkit-box-shadow: $x $y $blur $color;
+  -moz-box-shadow: $x $y $blur $color;
+  box-shadow: $x $y $blur $color;
+}
+
+// Style the container element
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: $light-color;
+  @include box-shadow(0, 0, 10px, rgba(0, 0, 0, 0.1));
+}
+
+// Style the card element
+.card {
+  margin-top: 20px;
+  border: none;
+  border-radius: 10px;
+  background-color: white;
+  @include box-shadow(0, 0, 10px, rgba(0, 0, 0, 0.1));
+
+  &-body {
+    padding: 20px;
+  }
+}
+
+// Style the card text element
+.card-text {
+  margin-bottom: 10px;
+  color: $dark-color;
+
+  @media (max-width: 600px) {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+// Create a generic button style
+%btn {
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-weight: bold;
+  color: white;
+
+  &:hover {
+    filter: brightness(90%);
+  }
+}
+
+// Style the buttons
+.food-details__edit-button {
+  @extend %btn;
+  background-color: $primary-color;
+}
+
+.food-details__delete-button {
+  @extend %btn;
+  background-color: $secondary-color;
+}
+
+// Add some margin to the right of the secondary button
+.mr-15 {
+  margin-right: 15px;
+}
+
+// Add some icons to the buttons
+i {
+  margin-right: 5px;
+}
+
+// Style the food details
+.food-details__name {
+  color: $dark-color;
+  margin-bottom: 20px;
+}
+
+.food-details__description {
+  margin-bottom: 20px;
+}
+
+.food-details__info {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+
+  > div {
+    width: 50%;
+    margin-bottom: 10px;
+
+    @media (max-width: 600px) {
+      width: 100%;
     }
-  
-    &__description {
-      margin-bottom: 1rem;
-      font-style: italic;
-      color: #757575;
-    }
-  
-    &__info {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      margin-top: 1rem;
-    }
-  
-    &__quantity,
-    &__price,
-    &__category,
-    &__id {
-      flex-basis: calc(50% - 0.5rem);
-      margin-bottom: 0.5rem;
-    }
-  
-    &__quantity {
-      color: #ffc107; /* yellow */
-    }
-  
-    &__price {
-      color: #4caf50; /* darker green */
-    }
-  
-    &__category,
-    &__id {
-      color: #616161; /* gray */
-    }
-  
-    &:hover {
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      transition: box-shadow 0.2s ease-in-out;
-    }
-  
-    &--featured {
-      border: 2px solid #8bc34a;
-    }
-  
-    &__buttons {
-      display: flex;
-      justify-content: flex-end;
-      margin-top: 1rem;
-    }
-  
-    &__edit-button,
-    &__delete-button {
-      border: none;
-      border-radius: 3px;
-      padding: 0.5rem;
-      margin-left: 1rem;
-      color: #fff;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-  
-      &:hover {
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        transition: box-shadow 0.2s ease-in-out;
-      }
-    }
-  
-    &__edit-button {
-      background-color: #2196f3; /* blue */
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
-  
-    &__delete-button {
-      background-color: #f44336; /* red */
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
-    }
-  
+  }
+}
+
+.food-details__quantity, .food-details__price, .food-details__category, .food-details__id {
+  color: $dark-color;
+}
+
+.food-details__buttons {
+  display: flex;
+
+  > button {
+    flex-grow: 1;
+  }
+}
