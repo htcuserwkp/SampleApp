@@ -31,6 +31,12 @@ $light-color: #F5F5F5; // light gray
   &-body {
     padding: 20px;
   }
+
+  // Add hover effect on the card element
+  &:hover {
+    transform: translateY(-5px);
+    @include box-shadow(0, 0, 20px, rgba(0, 0, 0, 0.2));
+  }
 }
 
 // Style the card text element
@@ -53,6 +59,8 @@ $light-color: #F5F5F5; // light gray
 
   &:hover {
     filter: brightness(90%);
+    transform: translateY(-2px);
+    @include box-shadow(0, 0, 10px, rgba(0, 0, 0, 0.1));
   }
 }
 
@@ -60,11 +68,21 @@ $light-color: #F5F5F5; // light gray
 .btn-secondary {
   @extend %btn;
   background-color: $primary-color;
+
+  // Add hover effect on the secondary button
+  &:hover {
+    background-color: darken($primary-color, 10%);
+  }
 }
 
 .btn-danger {
   @extend %btn;
   background-color: $secondary-color;
+
+  // Add hover effect on the danger button
+  &:hover {
+    background-color: darken($secondary-color, 10%);
+  }
 }
 
 // Add some margin to the right of the secondary button
